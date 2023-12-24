@@ -31,18 +31,18 @@ const Computers = ({isMobile}) => {
 
 const ComputersCanvas = () => {
 
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const mediaQuery = window.matchMedia(
-    '(max-width:500px)');
+  // const [isMobile, setIsMobile] = useState(false);
+  // useEffect(() => {
+  //   const mediaQuery = window.matchMedia(
+  //   '(max-width:500px)');
 
-    setIsMobile(mediaQuery.matches);
-    const handleMediaQueryChange = (event)=>{
-      setIsMobile(event.matches);
-    }
-    mediaQuery.addEventListener('change',handleMediaQueryChange);
+  //   setIsMobile(mediaQuery.matches);
+  //   const handleMediaQueryChange = (event)=>{
+  //     setIsMobile(event.matches);
+  //   }
+  //   mediaQuery.addEventListener('change',handleMediaQueryChange);
   
-  }, []);
+  // }, []);
   
   return (
 
@@ -52,7 +52,7 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers isMobile={isMobile} />
+        <Computers />
       </Suspense>
       <Preload all />
     </Canvas>
