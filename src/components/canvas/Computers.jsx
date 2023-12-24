@@ -57,7 +57,6 @@ const ComputersCanvas = () => {
   }, []);
 
   return (
-    <>
     <div style={{ position: 'relative' }}>
       {isMobile && (
         <img
@@ -73,8 +72,6 @@ const ComputersCanvas = () => {
           }}
         />
       )}
-    </div>
-
       <Canvas frameloop="demand" shadows camera={{ position: [20, 3, 5], fov: 25 }} gl={{ preserveDrawingBuffer: true, alpha: true }}>
         <Suspense fallback={<CanvasLoader />}>
           <OrbitControls
@@ -86,7 +83,7 @@ const ComputersCanvas = () => {
         </Suspense>
         <Preload all />
       </Canvas>
-    </>
+    </div>
   );
 };
 
