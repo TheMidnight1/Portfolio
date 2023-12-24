@@ -4,7 +4,7 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
 import CanvasLoader from '../Loader'
 import logo from '../../assets/logo.svg'
 
-const Computers = ({isMobile}) => {
+const Computers = ({ isMobile }) => {
   const computer = useGLTF('./desktop_pc/scene.gltf')
   return (
     <mesh>
@@ -35,26 +35,26 @@ const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const mediaQuery = window.matchMedia(
-    '(max-width:500px)');
+      '(max-width:500px)');
 
     setIsMobile(mediaQuery.matches);
-    const handleMediaQueryChange = (event)=>{
+    const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     }
-    mediaQuery.addEventListener('change',handleMediaQueryChange);
-  
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+
   }, []);
-  
+
   return (
-    <Canvas frameloop='demand' shadows camera={{ position: [20, 3, 5], fov: 25 }} gl={{ preserveDrawingBuffer: true,alpha:true }}>
+    <Canvas frameloop='demand' shadows camera={{ position: [20, 3, 5], fov: 25 }} gl={{ preserveDrawingBuffer: true, alpha: true }}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers isMobile={isMobile}/>
+        <Computers isMobile={isMobile} />
+        <Preload all />
       </Suspense>
-      <Preload all />
     </Canvas>
   )
 }
