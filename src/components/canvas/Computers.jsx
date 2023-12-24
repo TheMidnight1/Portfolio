@@ -46,7 +46,7 @@ const ComputersCanvas = () => {
   }, []);
   
   return (
-
+<div>
     <Canvas frameloop='demand' shadows camera={{ position: [20, 3, 5], fov: 25 }} gl={{ preserveDrawingBuffer: true,alpha:true }}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false}
@@ -57,6 +57,7 @@ const ComputersCanvas = () => {
       </Suspense>
       <Preload all />
     </Canvas>
+</div>
 
   )
 }
