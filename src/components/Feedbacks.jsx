@@ -5,7 +5,7 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { testimonials } from "../constants";
-
+import './feedback.css'
 const FeedbackCard = ({
   index,
   testimonial,
@@ -33,10 +33,10 @@ const FeedbackCard = ({
           </p>
         </div>
 
-        <img
+        <img id="feedback"
           src={image}
-          alt={`feedback_by-${name}`}
-          className='w-10 h-10 rounded-full object-cover'
+          alt={`Feedback_by ${name}`}
+          className='w-20 h-10 rounded-full object-cover'
         />
       </div>
     </div>
